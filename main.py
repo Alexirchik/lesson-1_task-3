@@ -1,16 +1,16 @@
 import sys
 
-from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QMainWindow, QPushButton
 from PyQt5.QtGui import QPainter, QColor
 from random import randint
+from UI import Ui_MainWindow
 
 
-class Example(QMainWindow):
+class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.draw)
         self.flag = False
 
